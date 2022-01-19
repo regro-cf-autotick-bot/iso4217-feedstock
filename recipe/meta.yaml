@@ -1,7 +1,5 @@
 {% set name = "iso4217" %}
-{% set version = "1.6.20180829" %}
-{% set hash_type = "sha256" %}
-{% set hash_value = "33f404b5eeb3cb8572f132b7c697782eccffeb00630900f305244ffa058e875c" %}
+{% set version = "1.8.20211001" %}
 
 package:
   name: {{ name|lower }}
@@ -9,12 +7,12 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  '{{ hash_type }}': '{{ hash_value }}'
+  sha256: 69d73889707f8a2c3d988b7b5d5aa75712ae6b2b65cf2660b1effe95feda22c2
 
 build:
   noarch: python
   number: 0
-  script: "{{ PYTHON }} -m pip install . -vv"
+  script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
